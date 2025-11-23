@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_margin="12dp"
+    android:radius="16dp"
+    android:elevation="4dp">
 
-    <TextView
-        android:id="@+id/txtFacilityName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="시설 이름"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:orientation="horizontal"
+        android:padding="18dp"
+        android:gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/txtFacilityCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="카테고리"
-        android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/facilityNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_favorite_border"
+            android:tint="#FFB300" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
