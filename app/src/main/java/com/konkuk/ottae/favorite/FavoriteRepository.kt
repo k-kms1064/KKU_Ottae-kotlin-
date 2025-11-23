@@ -1,28 +1,20 @@
 package com.konkuk.ottae.favorite
 
-import android.content.Context
-import androidx.room.Room
-import com.konkuk.ottae.AppDatabase
+class FavoriteRepository(private val dao: FavoriteDao) {
 
-class FavoriteRepository(context: Context) {
-
-    private val db: AppDatabase = Room.databaseBuilder(
-        context.applicationContext,
-        AppDatabase::class.java,
-        "favorite-db"
-    ).build()
-
-    private val dao = db.favoriteDao()
-
-    fun getFavorites(): List<FavoriteEntity> {
-        return emptyList()
+    suspend fun addFavorite(favorite: FavoriteEntity) {
+        dao.insertFavorite(favorite)
     }
 
-    fun addFavorite(item: FavoriteEntity) {
-
+    suspend fun removeFavorite(favorite: FavoriteEntity) {
+        dao.deleteFavorite(favorite)
     }
 
-    fun removeFavorite(item: FavoriteEntity) {
+    suspend fun getAllFavorites(): List<FavoriteEntity> {
+        return dao.getAllFavorites()
+    }
 
+    suspend fun isFavorite(facilityId: Int): Boolean {
+        return dao.getFavoriteByFacilityId(facilityId) != null
     }
 }
