@@ -1,26 +1,34 @@
 package com.konkuk.ottae.favorite
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
-class FavoriteViewModel(
-    private val repository: FavoriteRepository
-) : ViewModel() {
+class FavoriteViewModel(private val repository: FavoriteRepository) : ViewModel() {
 
-    private val _favorites = MutableLiveData<List<FavoriteEntity>>(emptyList())
-    val favorites: LiveData<List<FavoriteEntity>> get() = _favorites
-
-    fun loadFavorites() {
-
-        _favorites.value = emptyList()
+    fun addFavorite(favorite: FavoriteEntity) {
+        viewModelScope.launch {
+            repository.addFavorite(favorite)
+        }
     }
 
-    fun add(item: FavoriteEntity) {
-
+    fun removeFavorite(favorite: FavoriteEntity) {
+        viewModelScope.launch {
+            repository.removeFavorite(favorite)
+        }
     }
 
-    fun remove(item: FavoriteEntity) {
+    fun isFavorite(facilityId: Int, callback: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val result = repository.isFavorite(facilityId)
+            callback(result)
+        }
+    }
 
+    fun getAllFavorites(callback: (List<FavoriteEntity>) -> Unit) {
+        viewModelScope.launch {
+            val result = repository.getAllFavorites()
+            callback(result)
+        }
     }
 }
