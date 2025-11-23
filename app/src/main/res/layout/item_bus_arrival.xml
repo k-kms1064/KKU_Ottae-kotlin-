@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="14dp"
-    android:background="#F5F5F5"
-    android:layout_marginBottom="10dp">
+    android:orientation="horizontal"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/txtRouteName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="600번"
-        android:textSize="17sp"
-        android:textStyle="bold"/>
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_bus"
+        android:layout_marginEnd="12dp" />
 
-    <TextView
-        android:id="@+id/txtArrivalInfo"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5분 후 도착"
-        android:textSize="15sp"
-        android:layout_marginTop="6dp"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtRouteName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#222222" />
+
+        <TextView
+            android:id="@+id/txtArrivalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="약 5분 후"
+            android:textSize="14sp"
+            android:textColor="#555555" />
+
+        <TextView
+            android:id="@+id/txtDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상행 · 3정류장 전"
+            android:textSize="13sp"
+            android:textColor="#777777" />
+    </LinearLayout>
+
 </LinearLayout>
