@@ -1,51 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="#F1FAF3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:padding="24dp">
 
-        <TextView
-            android:id="@+id/txtFacilityTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="편의시설 카테고리"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/btnKorean"
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_back"
+                android:tint="#0B6E4F"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="편의시설"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#0B6E4F"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D8EAE3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="한식"
-            android:textSize="16sp"
-            android:padding="14dp" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnCafe"
+            <LinearLayout
+                android:id="@+id/btnKorean"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🍚" />
+                <TextView style="@style/CategoryLabel" android:text="한식" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnChinese"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🥡" />
+                <TextView style="@style/CategoryLabel" android:text="중식" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="카페"
-            android:textSize="16sp"
-            android:padding="14dp"
-            android:layout_marginTop="16dp"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnSnack"
+            <LinearLayout
+                android:id="@+id/btnJapanese"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🍣" />
+                <TextView style="@style/CategoryLabel" android:text="일식/돈까스" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnChicken"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🍗" />
+                <TextView style="@style/CategoryLabel" android:text="치킨/피자" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="분식"
-            android:textSize="16sp"
-            android:padding="14dp"
-            android:layout_marginTop="16dp"/>
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/btnBurger"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🍔" />
+                <TextView style="@style/CategoryLabel" android:text="버거" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnSnack"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🍜" />
+                <TextView style="@style/CategoryLabel" android:text="분식" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/btnCafe"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="☕" />
+                <TextView style="@style/CategoryLabel" android:text="카페" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnMart"
+                style="@style/CategoryBox">
+
+                <TextView style="@style/CategoryEmoji" android:text="🏪" />
+                <TextView style="@style/CategoryLabel" android:text="편의점" />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
-
 </ScrollView>
