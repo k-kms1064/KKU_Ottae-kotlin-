@@ -1,21 +1,32 @@
 package com.konkuk.ottae.facility
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.konkuk.ottae.R
 
-class FacilityAdapter : RecyclerView.Adapter<FacilityAdapter.FacilityViewHolder>() {
+class FacilityAdapter(
+    private val items: List<Facility> = emptyList()
+) : RecyclerView.Adapter<FacilityAdapter.FacilityViewHolder>() {
 
-    inner class FacilityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class FacilityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val txtName: TextView = itemView.findViewById(R.id.txtFacilityName)
+        val txtCategory: TextView = itemView.findViewById(R.id.txtFacilityCategory)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FacilityViewHolder {
-        val view = View(parent.context)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.facility_item, parent, false)
         return FacilityViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: FacilityViewHolder, position: Int) {
-
+        val item = items[position]
+        holder.txtName.text = item.name
+        holder.txtCategory.text = item.category
     }
 
-    override fun getItemCount(): Int = 0
+    override fun getItemCount(): Int = items.size
 }
