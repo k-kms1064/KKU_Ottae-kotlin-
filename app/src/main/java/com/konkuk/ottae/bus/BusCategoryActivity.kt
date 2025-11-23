@@ -1,9 +1,9 @@
 package com.konkuk.ottae.bus
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import com.konkuk.ottae.R
 
 class BusCategoryActivity : AppCompatActivity() {
@@ -15,11 +15,13 @@ class BusCategoryActivity : AppCompatActivity() {
         val btnBack = findViewById<Button>(R.id.btnBack)
 
         btnFront.setOnClickListener {
-            Toast.makeText(this, "정문 버스 정보 준비중", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, BusArrivalActivity::class.java)
+            startActivity(intent)
         }
 
         btnBack.setOnClickListener {
-            Toast.makeText(this, "후문 버스 정보 준비중", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, BusArrivalActivity::class.java)
+            startActivity(intent)
         }
     }
 }
