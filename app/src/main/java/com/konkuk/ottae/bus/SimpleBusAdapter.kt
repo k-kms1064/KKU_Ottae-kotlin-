@@ -7,25 +7,26 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.konkuk.ottae.R
 
-class SimpleBusAdapter(private val items: List<SimpleBusItem>) :
-    RecyclerView.Adapter<SimpleBusAdapter.SimpleBusViewHolder>() {
+class SimpleBusAdapter(
+    private val items: List<SimpleBusItem>
+) : RecyclerView.Adapter<SimpleBusAdapter.Holder>() {
 
-    inner class SimpleBusViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(android.R.id.text1)
-        val value: TextView = itemView.findViewById(android.R.id.text2)
+    inner class Holder(v: View) : RecyclerView.ViewHolder(v) {
+        val title: TextView = v.findViewById(android.R.id.text1)
+        val desc: TextView = v.findViewById(android.R.id.text2)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleBusViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context)
             .inflate(android.R.layout.simple_list_item_2, parent, false)
-        return SimpleBusViewHolder(view)
+        return Holder(view)
     }
 
-    override fun onBindViewHolder(holder: SimpleBusViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) {
         val item = items[position]
         holder.title.text = item.title
-        holder.value.text = item.value
+        holder.desc.text = item.desc
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount() = items.size
 }
