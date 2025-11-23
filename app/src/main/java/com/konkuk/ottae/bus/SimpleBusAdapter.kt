@@ -7,13 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.konkuk.ottae.R
 
-class SimpleBusAdapter(
-    private val items: List<SimpleBusItem> = emptyList()
-) : RecyclerView.Adapter<SimpleBusAdapter.SimpleBusViewHolder>() {
+class SimpleBusAdapter(private val items: List<SimpleBusItem>) :
+    RecyclerView.Adapter<SimpleBusAdapter.SimpleBusViewHolder>() {
 
     inner class SimpleBusViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val txtTitle: TextView = itemView.findViewById(android.R.id.text1)
-        val txtValue: TextView = itemView.findViewById(android.R.id.text2)
+        val title: TextView = itemView.findViewById(android.R.id.text1)
+        val value: TextView = itemView.findViewById(android.R.id.text2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleBusViewHolder {
@@ -24,8 +23,8 @@ class SimpleBusAdapter(
 
     override fun onBindViewHolder(holder: SimpleBusViewHolder, position: Int) {
         val item = items[position]
-        holder.txtTitle.text = item.title
-        holder.txtValue.text = item.value
+        holder.title.text = item.title
+        holder.value.text = item.value
     }
 
     override fun getItemCount(): Int = items.size
