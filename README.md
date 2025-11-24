@@ -164,20 +164,18 @@
 
 # 📸 스크린샷
 
-## 🚍 버스 도착 정보 화면
-<p align="center">
-  <img src="docs/images/bus_arrival.png" width="280">
-</p>
-
-## 🍽️ 편의시설 목록 화면
-<p align="center">
-  <img src="docs/images/facility_list.png" width="280">
-</p>
-
-## ⭐ 즐겨찾기 화면
-<p align="center">
-  <img src="docs/images/favorite_list.png" width="280">
-</p>
+<table>
+  <tr>
+    <th align="center">🚍 버스 도착</th>
+    <th align="center">🍽️ 편의시설 목록</th>
+    <th align="center">⭐ 즐겨찾기</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/images/bus_arrival.png" width="250"></td>
+    <td align="center"><img src="docs/images/facility_list.png" width="250"></td>
+    <td align="center"><img src="docs/images/favorite_list.png" width="250"></td>
+  </tr>
+</table>
 
 ------------------------------------------------------------------------
 
