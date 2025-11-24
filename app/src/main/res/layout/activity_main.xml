@@ -2,103 +2,103 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center"
+    android:padding="28dp"
     android:background="@drawable/bg_main_gradient">
 
-    <!-- 앱 타이틀 -->
+    <!-- 상단 로고/타이틀 -->
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="건대어때"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="42sp"
         android:textStyle="bold"
-        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
         android:shadowColor="#55000000"
         android:shadowDx="0"
         android:shadowDy="4"
-        android:shadowRadius="8"/>
+        android:shadowRadius="10" />
 
-    <!-- 버스 정보 버튼 -->
+    <!-- 공통 버튼 스타일 -->
     <LinearLayout
         android:id="@+id/btnBus"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="88dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/main_button_card"
-        android:gravity="center_vertical"
-        android:padding="20dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🚌"
-            android:textSize="28sp"
-            android:layout_marginEnd="12dp"/>
+            android:textSize="30sp"
+            android:layout_marginEnd="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="버스 정보"
+            android:textSize="24sp"
             android:textColor="#000000"
-            android:textSize="22sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- 편의시설 버튼 -->
     <LinearLayout
         android:id="@+id/btnFacility"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="88dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/main_button_card"
-        android:gravity="center_vertical"
-        android:padding="20dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🏙️"
-            android:textSize="28sp"
-            android:layout_marginEnd="12dp"/>
+            android:textSize="30sp"
+            android:layout_marginEnd="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="편의시설"
+            android:textSize="24sp"
             android:textColor="#000000"
-            android:textSize="22sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- 즐겨찾기 버튼 -->
     <LinearLayout
         android:id="@+id/btnFavorites"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="88dp"
         android:background="@drawable/main_button_card"
-        android:gravity="center_vertical"
-        android:padding="20dp"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="❤️"
-            android:textSize="28sp"
-            android:layout_marginEnd="12dp"/>
+            android:textSize="30sp"
+            android:layout_marginEnd="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="즐겨찾기"
+            android:textSize="24sp"
             android:textColor="#000000"
-            android:textSize="22sp"
             android:textStyle="bold" />
     </LinearLayout>
 
